@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 interface TimerInputProps {
-
+    onSubmit: (text: string) => void;
 }
 
 const TimerInput = (props: TimerInputProps) => {
@@ -9,7 +9,7 @@ const TimerInput = (props: TimerInputProps) => {
     const [text, setText] = useState('')
 
     const onClick = () => {
-        window.alert(text);
+        props.onSubmit(text);
         setText('');
     }   
 

@@ -7,6 +7,9 @@ import {
   NavbarBrand,
 } from 'reactstrap';
 
+
+import TimerInput from './Timer-input';
+
 function App() {
   return (
     <React.Fragment>
@@ -14,8 +17,8 @@ function App() {
         <NavbarBrand href="/">Simple Timer Application</NavbarBrand>
       </Navbar>
 
-
-      <Button>Test</Button>
+      <TimerInput />
+      
     </React.Fragment>
   );
 }

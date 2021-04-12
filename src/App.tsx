@@ -20,7 +20,7 @@ function App() {
         <NavbarBrand href="/">Simple Timer Application</NavbarBrand>
       </Navbar>
 
-      <TimerInput onSubmit={(text: string) => {
+      <TimerInput placeholderText="Enter your time tracking description" onSubmit={(text: string) => {
         setResult(text);
       }}/>
 

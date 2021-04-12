@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 
+
 interface TimerInputProps {
+    placeholderText: string;
     onSubmit: (text: string) => void;
 }
 
@@ -15,7 +17,7 @@ const TimerInput = (props: TimerInputProps) => {
 
     return (
         <React.Fragment>
-            <input value={text} onChange={(e) => setText(e.target.value)} />
+            <input placeholder={props.placeholderText} value={text} onChange={(e) => setText(e.target.value)} />
             <button onClick={() => onClick()}>Start</button>
         </React.Fragment>
     )

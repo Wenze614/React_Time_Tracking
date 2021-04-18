@@ -1,20 +1,20 @@
 import React, {useState} from 'react'
 import TimerInput from './Timer-input'
 
-interface task {
+export interface task {
     id: number;
     content: string
 }
 function TimerList() {
-    const [todoList,setTodoList] = useState(String[])
+    const [todoList,setTodoList] = useState<task[]>([])
 
-    const onSubmit = (text: String) => {
+    const onSubmit = (text: task) => {
         const newList = [text, ...todoList]
         setTodoList(newList)
     }
     return (
         <div>
-            <TimerInput/>
+            <TimerInput placeholderText="Add Your Task Here..." onSubmit={onSubmit}/>
         </div>
     )
 }

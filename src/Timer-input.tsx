@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 
-interface TimerInputProps {
+export interface TimerInputProps {
     placeholderText: string;
     onSubmit: (text: string) => void;
 }

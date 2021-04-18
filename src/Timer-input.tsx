@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import TimerList,{task} from './TimerList'
+import {task} from './TimerList'
 
 export interface TimerInputProps {
     placeholderText: string;
@@ -10,7 +10,6 @@ export interface TimerInputProps {
 const TimerInput = (props: TimerInputProps) => {
     const [index, setIndex] = useState(0)
     const [text, setText] = useState('')
-    const [myTask, setMyTask] = useState<task>()
     var new_task: task = {
         id: index,
         content: text

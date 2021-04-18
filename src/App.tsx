@@ -8,6 +8,7 @@ import {
 
 
 import TimerInput from './Timer-input';
+import TimerList from './TimerList';
 
 function App() {
 
@@ -19,9 +20,10 @@ function App() {
         <NavbarBrand href="/">Simple Timer Application</NavbarBrand>
       </Navbar>
 
-      <TimerInput placeholderText="Enter your time tracking description" onSubmit={(text: string) => {
+      {/* <TimerInput placeholderText="Enter your time tracking description" onSubmit={(text: string) => {
         setResult(text);
-      }}/>
+      }}/> */}
+      <TimerList/>
 
 
       { result }

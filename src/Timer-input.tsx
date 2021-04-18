@@ -6,8 +6,9 @@ export interface TimerInputProps {
     onSubmit: (task: task) => void;
 }
 
-const [index, setIndex] = useState(0)
+
 const TimerInput = (props: TimerInputProps) => {
+    const [index, setIndex] = useState(0)
     const [text, setText] = useState('')
     const [myTask, setMyTask] = useState<task>()
     var new_task: task = {

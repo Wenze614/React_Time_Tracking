@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import TimerInput from './Timer-input'
+import TimerForm from './TimerForm'
 
 export interface task {
     id: number;
@@ -15,6 +16,7 @@ function TimerList() {
     return (
         <div>
             <TimerInput placeholderText="Add Your Task Here..." onSubmit={onSubmit}/>
+            <TimerForm {...todoList}/>
         </div>
     )
 }

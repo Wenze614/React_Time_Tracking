@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect} from 'react';
 import './App.css';
 
 import {
@@ -11,8 +11,8 @@ import TimerInput from './Timer-input';
 
 function App() {
 
- const [result, setResult] = useState('');
-
+  const [result, setResult] = useState('');
+  useEffect(()=>{console.log(result)},[result])
   return (
     <React.Fragment>
       <Navbar color="light" light expand="md">

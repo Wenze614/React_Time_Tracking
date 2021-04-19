@@ -11,6 +11,10 @@ function TimerList() {
         const newList = [task, ...todoList]
         setTodoList(newList)
     }
+    const handleDelete = (task:TimerObject) => {
+        var newList = todoList.filter((todo)=>{return todo.id != task.id })
+        setTodoList(newList)
+    }
     return (
         <div>
             <TimerInput placeholderText="Add Your Task Here..." onSubmit={handleSubmit}/>

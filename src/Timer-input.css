@@ -1,0 +1,22 @@
+.input-area{
+    display: flex;
+    width: 50%;
+    height: 100px;
+    margin: auto;
+    align-items: center;
+}
+.input-field{
+    background-color: rgb(248, 190, 135);
+    margin: auto;
+    height: 50px;
+    width: 70%;
+    border-radius: 12px;
+    border-color: rgb(0, 0, 0);
+}
+.start-button{
+    background-color: rgb(248, 190, 135);
+    border-radius: 12px;
+    border-color: black;
+    height: 50px;
+    width: 20%;
+}

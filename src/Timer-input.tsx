@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import {TimerObject}from './TimerForm'
-
+import "./Timer-input.css"
 export interface TimerInputProps {
     placeholderText: string;
     onSubmit: (task: TimerObject) => void;
@@ -27,10 +27,11 @@ const TimerInput = (props: TimerInputProps) => {
     }   
 
     return (
-        <React.Fragment>
-            <input placeholder={props.placeholderText} value={text} onChange={(e) => setText(e.target.value)} />
-            <button onClick={() => onClick()}>Start</button>
-        </React.Fragment>
+            <div className = "input-area">
+            <input  className = "input-field" placeholder={props.placeholderText} value={text} onChange={(e) => setText(e.target.value)} />
+            <button  className = "start-button" onClick={() => onClick()}>Start</button>
+            </div>
+
     )
 };
 

@@ -1,16 +1,22 @@
 .task-item{
     background-color: rgb(248, 190, 135);
-    margin-bottom: 20px;
     display: flex;
     align-items: center;
     text-align: center;
-    width: 600px;
+    width: 700px;
     height: 60px;
+    margin:auto;
+    margin-bottom: 20px;
+    border-color: black;
+    border-radius: 12px;
+    border-style: solid;
+    border-width: 3px;
 }
 
 .id-content{
     background-color: rgb(255, 255, 255);
     margin-right: 50px;
+    margin-left:50px;
     color: rgb(248, 190, 135);
     width: 50px;
 }
@@ -20,5 +26,8 @@
     margin-right: 50px;
     color: rgb(248, 190, 135);
     width: 200px;
+}
+.delete-button{
+    margin-right: 50px;
 }
 

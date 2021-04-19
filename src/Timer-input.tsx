@@ -1,18 +1,22 @@
 import React, { useState } from 'react';
-import {task} from './TimerList'
+import {TimerObject}from './TimerForm'
 
 export interface TimerInputProps {
     placeholderText: string;
-    onSubmit: (task: task) => void;
+    onSubmit: (task: TimerObject) => void;
 }
 
 
 const TimerInput = (props: TimerInputProps) => {
     const [index, setIndex] = useState(0)
     const [text, setText] = useState('')
-    var new_task: task = {
+    var today = new Date();
+    var  new_task: TimerObject={
+        job: text,
         id: index,
-        content: text
+        dateStart: today,
+        dateEnd: today
+
     }
     const onClick = () => {
         props.onSubmit(new_task);

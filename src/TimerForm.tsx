@@ -1,11 +1,26 @@
 import React, {useState} from 'react'
-import {task} from './TimerList'
 
-const TimerForm = (todoList: task[]) => {
+
+export interface TimerObject {
+    job: string;
+    id: number;
+    dateStart: Date;
+    dateEnd: Date;
+}
+
+
+interface TimerFormProps {
+    todoList: TimerObject[];
+}
+
+const TimerForm = (props: TimerFormProps) => {
     return (
+        props.todoList.map((todo)=>(
         <div>
-            {todoList.map((todo) => {<div><div>{todo.id}</div><div>{todo.content}</div></div>})}
+        <div>{todo.job}</div>
+        <div>{todo.dateStart}</div>
         </div>
+        ))
     )
 }
     

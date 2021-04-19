@@ -18,7 +18,7 @@ function TimerList() {
     return (
         <div>
             <TimerInput placeholderText="Add Your Task Here..." onSubmit={handleSubmit}/>
-            <TimerForm todoList={todoList}/>
+            <TimerForm todoList={todoList} onClick={handleDelete}/>
         </div>
     )
 }

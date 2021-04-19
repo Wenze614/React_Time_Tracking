@@ -13,11 +13,14 @@ export interface TimerObject {
 
 interface TimerFormProps {
     todoList: TimerObject[];
+    onClick: (task:TimerObject)=>void
 
 }
 
 const TimerForm = (props: TimerFormProps) => {
-
+    const onclick = (todo: TimerObject) =>{
+        props.onClick(todo)
+    }
     return (<div className = "todoList">
         {props.todoList.map((todo)=>(
         <div key = {todo.id} className = "task-item">
@@ -25,7 +28,7 @@ const TimerForm = (props: TimerFormProps) => {
         <div className = "job-content">{todo.job}</div>
         <Timer/>
         
-        <button className = "start-button" >Delete</button>
+        <button className = "start-button" onClick={() => onclick(todo)} >Delete</button>
         </div>
         ))}
         </div>)

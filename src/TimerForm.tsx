@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import { Button } from 'react-bootstrap';
 import "./TimerForm.css"
 import Timer from 'react-compound-timer'
@@ -15,23 +15,20 @@ interface TimerFormProps {
 }
 
 const TimerForm = (props: TimerFormProps) => {
-    console.log(props.todoList)
+    const [timer, setTimer] = useState(0)
+    setInterval(()=>{
+        var new_timer = timer + 1
+        setTimer(new_timer)
+        console.log(timer)
+    },1000
+    )
     return (<>
         {props.todoList.map((todo)=>(
         <div key = {todo.id} className = "task-item">
         <div className = "id-content">{todo.id}</div>
         <div className = "job-content">{todo.job}</div>
-        <Timer
-                initialTime={0}
-                >
-                {() => (
-                <React.Fragment>
-                <Timer.Hours /> hours
-                <Timer.Minutes /> minutes
-                <Timer.Seconds /> seconds
-                </React.Fragment>
-                )}
-        </Timer>
+        <div className = "timer-content">{timer}</div>
+        
         <Button variant="outline-light">STOP</Button>
         </div>
         ))}

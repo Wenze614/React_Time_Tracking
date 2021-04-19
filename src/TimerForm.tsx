@@ -17,7 +17,7 @@ interface TimerFormProps {
 
 const TimerForm = (props: TimerFormProps) => {
 
-    return (<>
+    return (<div className = "todoList">
         {props.todoList.map((todo)=>(
         <div key = {todo.id} className = "task-item">
         <div className = "id-content">{todo.id}</div>
@@ -27,7 +27,7 @@ const TimerForm = (props: TimerFormProps) => {
         <Button variant="outline-light">STOP</Button>
         </div>
         ))}
-        </>)
+        </div>)
     
 }
     

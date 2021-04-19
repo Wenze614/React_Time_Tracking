@@ -18,7 +18,7 @@ const Timer = () =>{
         }
           
     },[])
-return <div className = "timer-content" >{Math.floor(timer/3600)}h-{Math.floor(timer/60)}min-{timer%60}s</div>
+return <div className = "timer-content" ><span className = "important-numbers">{Math.floor(timer/3600)}</span>h-<span className = "important-numbers">{Math.floor(timer/60)}</span>min-<span className = "important-numbers">{timer%60}</span>s</div>
 }
 
 export default Timer

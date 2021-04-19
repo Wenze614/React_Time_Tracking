@@ -10,14 +10,20 @@ export interface TimerInputProps {
 const TimerInput = (props: TimerInputProps) => {
     const [index, setIndex] = useState(0)
     const [text, setText] = useState('')
-    var today = new Date();
+    const [timer, setTimer] = useState(0)
+    var today = Date.now();
     var  new_task: TimerObject={
         job: text,
         id: index,
+        elapsedTime: timer,
         dateStart: today,
         dateEnd: today
 
     }
+    setInterval(function(){
+        var delta = Math.floor((Date.now() - today)/1000);
+        setTimer(delta)
+    },1000)
     const onClick = () => {
         props.onSubmit(new_task);
         setText('');

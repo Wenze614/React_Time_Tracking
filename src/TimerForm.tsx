@@ -1,11 +1,13 @@
 import React, {useState} from 'react'
-
+import { Button } from 'react-bootstrap';
+import "./TimerForm.css"
 
 export interface TimerObject {
     job: string;
     id: number;
-    dateStart: Date;
-    dateEnd: Date;
+    elapsedTime: number;
+    dateStart: number;
+    dateEnd: number;
 }
 
 
@@ -17,9 +19,11 @@ const TimerForm = (props: TimerFormProps) => {
     console.log(props.todoList)
     return (<>
         {props.todoList.map((todo)=>(
-        <div >
-        <div>{todo.job}</div>
-        <div>{todo.dateStart.toString()}</div>
+        <div key = {todo.id} className = "task-item">
+        <div className = "id-content">{todo.id}</div>
+        <div className = "job-content">{todo.job}</div>
+        <div className = "timer-content">{todo.elapsedTime}</div>
+        <Button variant="outline-light">STOP</Button>
         </div>
         ))}
         </>)

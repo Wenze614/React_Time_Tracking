@@ -17,7 +17,7 @@
     background-color: rgb(255, 255, 255);
     margin-right: 50px;
     margin-left:50px;
-    color: rgb(248, 190, 135);
+    color: red;
     width: 50px;
     border-radius: 12px;
 }
@@ -25,7 +25,7 @@
 .job-content{
     background-color: rgb(255, 255, 255);
     margin-right: 50px;
-    color: rgb(248, 190, 135);
+    color: red;
     width: 200px;
     border-radius: 12px;
 }

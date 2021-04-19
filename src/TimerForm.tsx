@@ -10,16 +10,16 @@ export interface TimerObject {
     dateEnd: number;
 }
 
-
+//return todolist wrapped in div, pass task to TimerList when delete button is clicked
 interface TimerFormProps {
     todoList: TimerObject[];
-    onClick: (task:TimerObject)=>void
+    onDelete: (task:TimerObject)=>void
 
 }
 
 const TimerForm = (props: TimerFormProps) => {
-    const onclick = (todo: TimerObject) =>{
-        props.onClick(todo)
+    const onClick = (todo: TimerObject) =>{
+        props.onDelete(todo)
     }
     return (<div className = "todoList">
         {props.todoList.map((todo)=>(
@@ -28,7 +28,7 @@ const TimerForm = (props: TimerFormProps) => {
         <div className = "job-content">{todo.job}</div>
         <Timer/>
         
-        <button className = "start-button" onClick={() => onclick(todo)} >Delete</button>
+        <button className = "start-button" onClick={() => onClick(todo)} >Delete</button>
         </div>
         ))}
         </div>)

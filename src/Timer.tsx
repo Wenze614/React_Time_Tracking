@@ -1,5 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import "./Timer.css"
+
+//start and return a new timer
 const Timer = () =>{
     const [timer, setTimer] = useState(0);
     const [initiate, setInitiate] = useState(false)

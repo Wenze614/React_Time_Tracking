@@ -2,13 +2,12 @@ import React, {useState} from 'react'
 import TimerInput from './Timer-input'
 import TimerForm, {TimerObject}from './TimerForm'
 
-
-
+//store the whole task list, and functions to add/delete task from it
 function TimerList() {
     const [todoList,setTodoList] = useState<TimerObject[]>([])
 
     const handleSubmit = (task:TimerObject) => {
-        const newList = [task, ...todoList]
+        const newList = [...todoList, task]
         setTodoList(newList)
     }
     const handleDelete = (task:TimerObject) => {
@@ -18,7 +17,7 @@ function TimerList() {
     return (
         <div>
             <TimerInput placeholderText="Add Your Task Here..." onSubmit={handleSubmit}/>
-            <TimerForm todoList={todoList} onClick={handleDelete}/>
+            <TimerForm todoList={todoList} onDelete={handleDelete}/>
         </div>
     )
 }

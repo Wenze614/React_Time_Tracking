@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import {TimerObject}from './TimerForm'
 import "./Timer-input.css"
+
+// return input field and start button, pass new task to TimerList when start button is clicked
 export interface TimerInputProps {
     placeholderText: string;
     onSubmit: (task: TimerObject) => void;

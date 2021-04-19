@@ -14,11 +14,12 @@ interface TimerFormProps {
 }
 
 const TimerForm = (props: TimerFormProps) => {
+    console.log(props.todoList)
     return (<>
         {props.todoList.map((todo)=>(
-        <div>
+        <div >
         <div>{todo.job}</div>
-        <div>{todo.dateStart}</div>
+        <div>{todo.dateStart.toString()}</div>
         </div>
         ))}
         </>)

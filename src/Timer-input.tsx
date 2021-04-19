@@ -15,15 +15,10 @@ const TimerInput = (props: TimerInputProps) => {
     var  new_task: TimerObject={
         job: text,
         id: index,
-        elapsedTime: timer,
         dateStart: today,
         dateEnd: today
 
     }
-    setInterval(function(){
-        var delta = Math.floor((Date.now() - today)/1000);
-        setTimer(delta)
-    },1000)
     const onClick = () => {
         props.onSubmit(new_task);
         setText('');

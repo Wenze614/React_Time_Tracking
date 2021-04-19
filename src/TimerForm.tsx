@@ -1,11 +1,10 @@
 import React, {useState} from 'react'
 import { Button } from 'react-bootstrap';
 import "./TimerForm.css"
-
+import Timer from 'react-compound-timer'
 export interface TimerObject {
     job: string;
     id: number;
-    elapsedTime: number;
     dateStart: number;
     dateEnd: number;
 }
@@ -22,7 +21,17 @@ const TimerForm = (props: TimerFormProps) => {
         <div key = {todo.id} className = "task-item">
         <div className = "id-content">{todo.id}</div>
         <div className = "job-content">{todo.job}</div>
-        <div className = "timer-content">{todo.elapsedTime}</div>
+        <Timer
+                initialTime={0}
+                >
+                {() => (
+                <React.Fragment>
+                <Timer.Hours /> hours
+                <Timer.Minutes /> minutes
+                <Timer.Seconds /> seconds
+                </React.Fragment>
+                )}
+        </Timer>
         <Button variant="outline-light">STOP</Button>
         </div>
         ))}

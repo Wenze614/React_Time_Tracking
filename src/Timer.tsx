@@ -5,11 +5,7 @@ import "./Timer.css"
 const Timer = () =>{
     const [timer, setTimer] = useState(0);
     const [initiate, setInitiate] = useState(false)
-    useEffect(()=>{
-        console.log(timer)
     
-    },[timer])
-       
     useEffect(() => {
         if (!initiate)
         {

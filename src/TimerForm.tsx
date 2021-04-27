@@ -18,7 +18,7 @@ interface TimerFormProps {
 }
 
 const TimerForm = (props: TimerFormProps) => {
-    const onClick = (todo: TimerObject) =>{
+    const handleDelete = (todo: TimerObject) =>{
         props.onDelete(todo)
     }
     return (<div className = "todoList">
@@ -28,7 +28,7 @@ const TimerForm = (props: TimerFormProps) => {
         <div className = "job-content">{todo.job}</div>
         <Timer/>
         
-        <button className = "start-button" onClick={() => onClick(todo)} >Delete</button>
+        <button className = "start-button" onClick={() => handleDelete(todo)} >Delete</button>
         </div>
         ))}
         </div>)

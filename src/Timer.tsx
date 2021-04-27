@@ -4,19 +4,11 @@ import "./Timer.css"
 //start and return a new timer
 const Timer = () =>{
     const [timer, setTimer] = useState(0);
-    const [initiate, setInitiate] = useState(false)
-    
     useEffect(() => {
-        if (!initiate)
-        {
+        
             setInterval(() => {
                 setTimer(timer => timer+1)
             },1000)
-            console.log(timer)
-            setInitiate(true)
-        }
-        
-          
     },[])
 
     return (

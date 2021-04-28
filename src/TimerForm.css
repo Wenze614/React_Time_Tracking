@@ -11,7 +11,10 @@
     border-radius: 12px;
     border-style: solid;
     border-width: 3px;
-    box-shadow: 15px 15px 30px #b4eaee;
+
+}
+.task-item:hover{
+    box-shadow: 10px 10px 50px #b4eaee;
 }
 
 .id-content{

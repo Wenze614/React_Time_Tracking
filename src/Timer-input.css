@@ -12,7 +12,7 @@
     height: 50px;
     width: 70%;
     border-radius: 12px;
-    border-color: white;
+    border-width: 0;
 }
 .input-field:focus{
     outline-width: 0;

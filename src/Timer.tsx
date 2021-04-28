@@ -28,7 +28,7 @@ const Timer = (props:{todo: TimerObject}) =>{
         <div className = "job-content">{props.todo.job}</div>
         <div className = {isActivate ? "timer-content":"timer-content paused"} >
         <span className = "important-numbers">{Math.floor(timer/3600)}</span>h &nbsp;
-        <span className = "important-numbers">{Math.floor(timer/60)}</span>min &nbsp;
+        <span className = "important-numbers">{Math.floor(((timer%3600))/60)}</span>min &nbsp;
         <span className = "important-numbers">{timer%60}</span>s</div>
         {isActivate
         ?

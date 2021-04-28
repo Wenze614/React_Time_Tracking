@@ -18,14 +18,10 @@ interface TimerFormProps {
 }
 
 const TimerForm = (props: TimerFormProps) => {
-    const handleDelete = (todo: TimerObject) =>{
-        props.onDelete(todo)
-    }
+
     return (<div className = "todoList">
         {props.todoList.map((todo)=>(
-        <div>
         <Timer todo={todo}/>
-        </div>
         ))}
         </div>)
     

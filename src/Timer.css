@@ -46,7 +46,8 @@
 .delete-button{
     background-color: red;
     border-width: 0;
-    border-radius: 12px ;
+    border-top-right-radius: 12px ;
+    border-bottom-right-radius: 12px;
     color: white;
     position: absolute;
     right: 0;

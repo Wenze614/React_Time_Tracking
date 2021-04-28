@@ -14,9 +14,21 @@
     border-color: white;
 }
 .start-button{
+    background-color: transparent;
+    color: white;
+    border-radius: 12px;
+    border-width: 3;
+    border-color: white;
+    height: 50px;
+    width: 20%;
+}
+
+.start-button:hover{
     background-color: white;
+    color: black;
     border-radius: 12px;
     border-width: 0;
     height: 50px;
     width: 20%;
+    box-shadow: 5px 5px 50px #b4eaee;
 }

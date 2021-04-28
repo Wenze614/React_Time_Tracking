@@ -13,7 +13,7 @@ function App() {
   const [result, setResult] = useState('');
   useEffect(()=>{console.log(result)},[result])
   return (
-    <React.Fragment>
+    <div >
       <Navbar color="light" light expand="md">
         <NavbarBrand href="/">Simple Timer Application</NavbarBrand>
       </Navbar>
@@ -22,7 +22,7 @@ function App() {
 
       { result }
 
-    </React.Fragment>
+    </div>
   );
 }
 

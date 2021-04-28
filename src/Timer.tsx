@@ -5,6 +5,7 @@ import { TimerObject } from './TimerForm';
 //start and return a new timer
 const Timer = (props:{todo: TimerObject}) =>{
     const [timer, setTimer] = useState(0);
+    const [isDeleted, setIsDeleted] = useState(false)
     useEffect(() => {
         
             setInterval(() => {
@@ -12,7 +13,13 @@ const Timer = (props:{todo: TimerObject}) =>{
             },1000)
     },[])
 
-    return (
+    return  (<>{isDeleted
+            ?
+            (
+                <div></div>
+            )
+            :
+            ( 
         <div key = {props.todo.id} className = "task-item">
         <div className = "id-content">{props.todo.id}</div>
         <div className = "job-content">{props.todo.job}</div>
@@ -20,7 +27,12 @@ const Timer = (props:{todo: TimerObject}) =>{
         <span className = "important-numbers">{Math.floor(timer/3600)}</span>h-
         <span className = "important-numbers">{Math.floor(timer/60)}</span>min-
         <span className = "important-numbers">{timer%60}</span>s</div>
+        <button onClick={()=>setIsDeleted(true)}>Delete_test</button>
         </div>
+            )
+            
+        }
+        </>
     )
 }
 

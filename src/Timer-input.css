@@ -6,17 +6,17 @@
     align-items: center;
 }
 .input-field{
-    background-color: rgb(248, 190, 135);
+    background-color: white;
     margin: auto;
     height: 50px;
     width: 70%;
     border-radius: 12px;
-    border-color: rgb(0, 0, 0);
+    border-color: white;
 }
 .start-button{
-    background-color: rgb(248, 190, 135);
+    background-color: white;
     border-radius: 12px;
-    border-color: black;
+    border-width: 0;
     height: 50px;
     width: 20%;
 }

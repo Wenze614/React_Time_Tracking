@@ -26,17 +26,17 @@ const Timer = (props:{todo: TimerObject}) =>{
         <div key = {props.todo.id} className = "task-item">
         {/* <div className = "id-content">{props.todo.id}</div> */}
         <div className = "job-content">{props.todo.job}</div>
-        <div className = "timer-content" >
-        <span className = "important-numbers">{Math.floor(timer/3600)}</span>h-
-        <span className = "important-numbers">{Math.floor(timer/60)}</span>min-
+        <div className = {isActivate ? "timer-content":"timer-content paused"} >
+        <span className = "important-numbers">{Math.floor(timer/3600)}</span>h &nbsp;
+        <span className = "important-numbers">{Math.floor(timer/60)}</span>min &nbsp;
         <span className = "important-numbers">{timer%60}</span>s</div>
         {isActivate
         ?
-        (<button onClick={()=>setActivate(false)}>Pause</button>)
+        (<button className="activate-button" onClick={()=>setActivate(false)}>Pause</button>)
         :
-        (<button onClick={()=>setActivate(true)}>Resume</button>)
+        (<button className="activate-button" onClick={()=>setActivate(true)}>Resume</button>)
         }
-        <button onClick={()=>setIsDeleted(true)}>Delete_test</button>
+        <button className="delete-button" onClick={()=>setIsDeleted(true)}>X</button>
         </div>
             )
             

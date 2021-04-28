@@ -7,11 +7,16 @@
 }
 .input-field{
     background-color: white;
+    color:#176166;
     margin: auto;
     height: 50px;
     width: 70%;
     border-radius: 12px;
     border-color: white;
+}
+.input-field:focus{
+    outline-width: 0;
+    box-shadow: 5px 5px 50px #b4eaee;
 }
 .start-button{
     background-color: transparent;

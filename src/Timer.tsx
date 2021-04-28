@@ -30,9 +30,13 @@ const Timer = (props:{todo: TimerObject}) =>{
         <span className = "important-numbers">{Math.floor(timer/3600)}</span>h-
         <span className = "important-numbers">{Math.floor(timer/60)}</span>min-
         <span className = "important-numbers">{timer%60}</span>s</div>
+        {isActivate
+        ?
+        (<button onClick={()=>setActivate(false)}>Pause</button>)
+        :
+        (<button onClick={()=>setActivate(true)}>Resume</button>)
+        }
         <button onClick={()=>setIsDeleted(true)}>Delete_test</button>
-        <button onClick={()=>setActivate(false)}>Pause</button>
-        <button onClick={()=>setActivate(true)}>Resume</button>
         </div>
             )
             

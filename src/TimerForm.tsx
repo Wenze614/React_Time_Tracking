@@ -23,11 +23,8 @@ const TimerForm = (props: TimerFormProps) => {
     }
     return (<div className = "todoList">
         {props.todoList.map((todo)=>(
-        <div key = {todo.id} className = "task-item">
-        <div className = "id-content">{todo.id}</div>
-        <div className = "job-content">{todo.job}</div>
-        <Timer/>
-        
+        <div>
+        <Timer todo={todo}/>
         <button className = "start-button" onClick={() => handleDelete(todo)} >Delete</button>
         </div>
         ))}

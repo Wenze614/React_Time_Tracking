@@ -1,5 +1,5 @@
 .task-item{
-    background-color: rgb(248, 190, 135);
+    background-color: white;
     display: flex;
     align-items: center;
     text-align: center;
@@ -7,7 +7,7 @@
     height: 60px;
     margin:auto;
     margin-bottom: 20px;
-    border-color: black;
+    border-color: white;
     border-radius: 12px;
     border-style: solid;
     border-width: 3px;
@@ -17,7 +17,7 @@
     background-color: rgb(255, 255, 255);
     margin-right: 50px;
     margin-left:50px;
-    color: red;
+    color: black;
     width: 50px;
     border-radius: 12px;
 }
@@ -25,7 +25,7 @@
 .job-content{
     background-color: rgb(255, 255, 255);
     margin-right: 50px;
-    color: red;
+    color: black;
     width: 200px;
     border-radius: 12px;
 }

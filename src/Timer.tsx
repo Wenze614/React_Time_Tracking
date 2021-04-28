@@ -24,7 +24,7 @@ const Timer = (props:{todo: TimerObject}) =>{
             :
             ( 
         <div key = {props.todo.id} className = "task-item">
-        <div className = "id-content">{props.todo.id}</div>
+        {/* <div className = "id-content">{props.todo.id}</div> */}
         <div className = "job-content">{props.todo.job}</div>
         <div className = "timer-content" >
         <span className = "important-numbers">{Math.floor(timer/3600)}</span>h-

@@ -2,7 +2,7 @@ import {useState} from 'react'
 import TimerInput from './Timer-input'
 import TimerForm, {TimerObject}from './TimerForm'
 
-function TimerList() {
+function TimerContainer() {
     const [todoList,setTodoList] = useState<TimerObject[]>([])
 
     const handleSubmit = (task:TimerObject) => {
@@ -18,4 +18,4 @@ function TimerList() {
     )
 }
 
-export default TimerList
+export default TimerContainer

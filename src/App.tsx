@@ -5,7 +5,7 @@ import {
   NavbarBrand,
 } from 'reactstrap';
 
-import TimerList from './TimerList';
+import TimerContainer from './TimerContainer';
 
 function App() {
 
@@ -14,7 +14,7 @@ function App() {
       <Navbar color="light" light expand="md">
         <NavbarBrand href="/">Simple Timer Application</NavbarBrand>
       </Navbar>
-      <TimerList/>
+      <TimerContainer/>
     </div>
   );
 }

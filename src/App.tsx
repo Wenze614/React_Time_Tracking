@@ -1,4 +1,3 @@
-import React, { useState, useEffect} from 'react';
 import './App.css';
 
 import {
@@ -10,18 +9,12 @@ import TimerList from './TimerList';
 
 function App() {
 
-  const [result, setResult] = useState('');
-  useEffect(()=>{console.log(result)},[result])
   return (
     <div >
       <Navbar color="light" light expand="md">
         <NavbarBrand href="/">Simple Timer Application</NavbarBrand>
       </Navbar>
       <TimerList/>
-
-
-      { result }
-
     </div>
   );
 }

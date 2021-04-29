@@ -9,6 +9,10 @@ import TimerContainer from './TimerContainer';
 
 function App() {
 
+  const foo = () => {
+    console.log('Very important change')
+  }
+
   return (
     <div >
       <Navbar color="light" light expand="md">

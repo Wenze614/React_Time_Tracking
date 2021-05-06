@@ -1,8 +1,10 @@
 import {configureStore} from '@reduxjs/toolkit'
 import pauseReducer from '../features/pause/pauseSlice'
+import timerReducer from '../features/timer/timerSlice'
 export const store = configureStore({
     reducer:{
-        pause: pauseReducer
+        pause: pauseReducer,
+        timer: timerReducer
     }
 })
 

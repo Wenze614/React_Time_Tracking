@@ -2,10 +2,9 @@ import {useState, useEffect} from 'react'
 import "./Timer.css"
 import {TimerObject}from './features/timer/timerSlice'
 import {useAppDispatch } from './app/hook'
-import {pauseTimer, resumeTimer} from './features/timer/timerSlice'
+import {pauseTimer, resumeTimer, deleteTimer} from './features/timer/timerSlice'
 const Timer = (props:{todo: TimerObject}) =>{
     const [timer, setTimer] = useState(0);
-    const [isDeleted, setIsDeleted] = useState(false)
     const dispatch = useAppDispatch()
     const isPaused = props.todo.status
     useEffect(() => {
@@ -17,10 +16,7 @@ const Timer = (props:{todo: TimerObject}) =>{
         }
     },[isPaused])
 
-    return  (
-                <div >
-                {isDeleted ? (null) : (
-                <div key = {props.todo.id} className = "task-item">
+    return  (<div key = {props.todo.id} className = "task-item">
                     <div className = "job-content">{props.todo.job}</div>
                     <div className = {!isPaused ? "timer-content":"timer-content paused"} >
                         <span className = "important-numbers">{Math.floor(timer/3600)}</span>h &nbsp;
@@ -31,11 +27,9 @@ const Timer = (props:{todo: TimerObject}) =>{
                                 :
                                 (<button className="activate-button" onClick={()=>dispatch(resumeTimer(props.todo.id))}>Resume</button>)
                             }
-                    <button className="delete-button" onClick={()=>setIsDeleted(true)}>X</button>
+                    <button className="delete-button" onClick={()=>dispatch(deleteTimer(props.todo.id))}>X</button>
                 </div>
-                )
-            }
-            </div>
+               
     )
     
 }

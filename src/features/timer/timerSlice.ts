@@ -39,6 +39,6 @@ export const timerSlice = createSlice({
         }
     }
 })
-export const {addTimer, pauseTimer, resumeTimer} = timerSlice.actions
+export const {addTimer, pauseTimer, resumeTimer, deleteTimer} = timerSlice.actions
 export const selectTimer = (state: RootState) => state.timer.timerList
 export default timerSlice.reducer

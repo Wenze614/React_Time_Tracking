@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import {TimerObject}from './TimerForm'
 import "./Timer-input.css"
-
 export interface TimerInputProps {
     placeholderText: string;
     onSubmit: (task: TimerObject) => void;

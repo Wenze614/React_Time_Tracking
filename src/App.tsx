@@ -1,4 +1,5 @@
 import './App.css';
+import {store} from './app/store'
 
 import {
   Navbar,
@@ -6,8 +7,14 @@ import {
 } from 'reactstrap';
 
 import TimerContainer from './TimerContainer';
+import { Provider } from 'react-redux';
+const AppWrapper = () => {
+  return <Provider store = {store}>
+    <App />
+  </Provider>
+}
 
-function App() {
+const App = () => {
 
   return (
     <div >
@@ -19,4 +26,4 @@ function App() {
   );
 }
 
-export default App;
+export default AppWrapper;

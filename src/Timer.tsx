@@ -1,6 +1,6 @@
 import {useState, useEffect} from 'react'
 import "./Timer.css"
-import { TimerObject } from './TimerForm';
+import {TimerObject}from './features/timer/timerSlice'
 import {useAppSelector, useAppDispatch } from './app/hook'
 import {pauseTimer, resumeTimer, selectPause} from './features/pause/pauseSlice'
 const Timer = (props:{todo: TimerObject}) =>{

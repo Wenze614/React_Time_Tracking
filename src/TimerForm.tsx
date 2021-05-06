@@ -1,10 +1,7 @@
 import "./TimerForm.css"
 import Timer from './Timer'
 import "./Timer-input.css"
-export interface TimerObject {
-    job: string;
-    id: number;
-}
+import {TimerObject}from './features/timer/timerSlice'
 
 interface TimerFormProps {
     todoList: TimerObject[];

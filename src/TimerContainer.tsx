@@ -1,5 +1,6 @@
 import TimerInput from './Timer-input'
-import TimerForm, {TimerObject}from './TimerForm'
+import TimerForm from './TimerForm'
+import {TimerObject}from './features/timer/timerSlice'
 import {useAppDispatch, useAppSelector} from './app/hook'
 import {addTimer, selectTimer} from './features/timer/timerSlice'
 function TimerContainer() {

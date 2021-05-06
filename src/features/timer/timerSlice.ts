@@ -1,9 +1,10 @@
 import {createSlice} from '@reduxjs/toolkit'
 import type {RootState} from '../../app/store'
 
-interface TimerObject {
+export interface TimerObject {
     job: string;
     id: number;
+    status: boolean
 }
 
 interface timerState{

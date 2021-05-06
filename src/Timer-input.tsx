@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import {TimerObject}from './TimerForm'
+import {TimerObject}from './features/timer/timerSlice'
 import "./Timer-input.css"
 export interface TimerInputProps {
     placeholderText: string;
@@ -13,6 +13,7 @@ const TimerInput = (props: TimerInputProps) => {
     var  new_task: TimerObject={
         job: text,
         id: index,
+        status: true
     }
     const onClick = () => {
         props.onSubmit(new_task);

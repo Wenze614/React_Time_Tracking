@@ -27,9 +27,15 @@ export const timerSlice = createSlice({
             if (this_timer){
                 this_timer.status = true
             }
+        },
+        resumeTimer: (state, action) => {
+            const this_timer = state.timerList.find(timer=>timer.id === action.payload)
+            if (this_timer) {
+                this_timer.status = false
+            }
         }
     }
 })
-export const {addTimer, pauseTimer} = timerSlice.actions
+export const {addTimer, pauseTimer, resumeTimer} = timerSlice.actions
 export const selectTimer = (state: RootState) => state.timer.timerList
 export default timerSlice.reducer

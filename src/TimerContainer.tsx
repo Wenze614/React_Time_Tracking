@@ -1,12 +1,13 @@
-import {useState} from 'react'
 import TimerInput from './Timer-input'
 import TimerForm, {TimerObject}from './TimerForm'
+import {useAppDispatch, useAppSelector} from './app/hook'
+import {addTimer, selectTimer} from './features/timer/timerSlice'
 function TimerContainer() {
-    const [todoList,setTodoList] = useState<TimerObject[]>([])
+    const dispatch = useAppDispatch()
+    const todoList = useAppSelector(selectTimer)
 
     const handleSubmit = (task:TimerObject) => {
-        const newList = [...todoList, task]
-        setTodoList(newList)
+        dispatch(addTimer(task))
     }
 
     return (

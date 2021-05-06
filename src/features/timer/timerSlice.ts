@@ -19,8 +19,10 @@ export const timerSlice = createSlice({
     initialState,
     reducers:{
         addTimer: (state, action) => {
+            state.timerList = [...state.timerList, action.payload]
         }
     }
 })
-
+export const {addTimer} = timerSlice.actions
+export const selectTimer = (state: RootState) => state.timer.timerList
 export default timerSlice.reducer

@@ -21,6 +21,12 @@ export const timerSlice = createSlice({
     reducers:{
         addTimer: (state, action) => {
             state.timerList = [...state.timerList, action.payload]
+        },
+        pauseTimer: (state, action) => {
+            const this_timer = state.timerList.find(timer=>timer.id == action.payload)
+            if (this_timer){
+                this_timer.status = false
+            }
         }
     }
 })

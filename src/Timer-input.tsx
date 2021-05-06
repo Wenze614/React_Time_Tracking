@@ -13,7 +13,8 @@ const TimerInput = (props: TimerInputProps) => {
     var  new_task: TimerObject={
         job: text,
         id: index,
-        status: false
+        status: false,
+        counter: 0
     }
     const onClick = () => {
         props.onSubmit(new_task);

@@ -4,7 +4,7 @@ import type {RootState} from '../../app/store'
 export interface TimerObject {
     job: string;
     id: number;
-    status: boolean
+    status: boolean;
 }
 
 interface timerState{
@@ -33,6 +33,9 @@ export const timerSlice = createSlice({
             if (this_timer) {
                 this_timer.status = false
             }
+        },
+        deleteTimer: (state, action) => {
+            state.timerList = state.timerList.filter(timer=>timer.id !== action.payload)
         }
     }
 })

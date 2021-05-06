@@ -1,4 +1,4 @@
-import {useEffect} from 'react'
+import {useState, useEffect} from 'react'
 import "./Timer.css"
 import {TimerObject}from './features/timer/timerSlice'
 import {useAppDispatch } from './app/hook'
@@ -8,13 +8,16 @@ const Timer = (props:{todo: TimerObject}) =>{
     const isPaused = props.todo.status
     const this_ID = props.todo.id
     const counter = props.todo.counter
-    var id : ReturnType<typeof setInterval>
+    const [id, setID] = useState<ReturnType<typeof setInterval>>()
+    // var id : ReturnType<typeof setInterval>
     useEffect(() => {
         if (isPaused === false){
-            id = setInterval(() => {
+            setID( setInterval(() => {
                 dispatch(addCounter(this_ID))
-            },1000)
+            },1000))
+            return () => {clearInterval(id!)}
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     },[isPaused])
 
     return  (<div key = {props.todo.id} className = "task-item">
@@ -28,7 +31,7 @@ const Timer = (props:{todo: TimerObject}) =>{
                                 :
                                 (<button className="activate-button" onClick={()=>dispatch(resumeTimer(props.todo.id))}>Resume</button>)
                             }
-                    <button className="delete-button" onClick={()=>{clearInterval(id);dispatch(deleteTimer(props.todo.id))}}>X</button>
+                    <button className="delete-button" onClick={()=>{dispatch(deleteTimer(props.todo.id))}}>X</button>
                 </div>
                
     )

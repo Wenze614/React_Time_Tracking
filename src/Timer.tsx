@@ -2,7 +2,7 @@ import {useState, useEffect} from 'react'
 import "./Timer.css"
 import {TimerObject}from './features/timer/timerSlice'
 import {useAppDispatch } from './app/hook'
-import {pauseTimer} from './features/timer/timerSlice'
+import {pauseTimer, resumeTimer} from './features/timer/timerSlice'
 const Timer = (props:{todo: TimerObject}) =>{
     const [timer, setTimer] = useState(0);
     const [isDeleted, setIsDeleted] = useState(false)
@@ -29,7 +29,7 @@ const Timer = (props:{todo: TimerObject}) =>{
                             {!isPaused ?
                                 (<button className="activate-button" onClick={()=>dispatch(pauseTimer(props.todo.id))}>Pause</button>)
                                 :
-                                (<button className="activate-button" onClick={()=>console.log("na")}>Resume</button>)
+                                (<button className="activate-button" onClick={()=>dispatch(resumeTimer(props.todo.id))}>Resume</button>)
                             }
                     <button className="delete-button" onClick={()=>setIsDeleted(true)}>X</button>
                 </div>

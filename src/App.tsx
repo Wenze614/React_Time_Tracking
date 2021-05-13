@@ -18,7 +18,7 @@ const AppWrapper = () => {
 const App = () => {
 
   return (
-    <div >
+    <div className="app-container">
       <Navbar color="light" light expand="md">
         <NavbarBrand href="/">Simple Timer Application</NavbarBrand>
       </Navbar>

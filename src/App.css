@@ -38,6 +38,18 @@
 }
 
 .content{
+  height: 100%;
   display: flex;
   flex-direction: row;
+  position: relative;
+
+}
+
+.record-container{
+  width: 30%;
+  height:100vh;
+}
+
+.timer-container{
+  width: 70%;
 }

@@ -1,0 +1,11 @@
+.record-item{
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+    border-style: solid;
+    border-color: #65c0c7;
+    border-width: 1px;
+    width: 80%;
+    height: 8%;
+    margin: auto;
+}

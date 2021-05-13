@@ -38,9 +38,9 @@ const Timer = (props:TimerProps) =>{
                         <span className = "important-numbers">{Math.floor(((counter%3600))/60)}</span>min &nbsp;
                         <span className = "important-numbers">{counter%60}</span>s</div>
                             {!isPaused ?
-                                (<button className="activate-button" onClick={()=>dispatch(pauseTimer(props.todo.id))}>Pause</button>)
+                                (<button className="playPauseButton" onClick={()=>dispatch(pauseTimer(props.todo.id))}></button>)
                                 :
-                                (<button className="activate-button" onClick={()=>dispatch(resumeTimer(props.todo.id))}>Resume</button>)
+                                (<button className="playPauseButton paused" onClick={()=>dispatch(resumeTimer(props.todo.id))}></button>)
                             }
                     <button className="delete-button" onClick={()=>{dispatch(deleteTimer(props.todo.id))}}>X</button>
                 </div>

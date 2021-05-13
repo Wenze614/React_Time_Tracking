@@ -11,7 +11,8 @@
 .job-content{
     font-size: 20px;
     background-color: none;
-    color: black;
+    background-color: #000f12;
+    color: white;
     max-height: 100%;
     width: 20%;
     margin-left: 5%;

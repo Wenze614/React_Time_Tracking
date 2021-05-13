@@ -44,6 +44,12 @@ export const timerSlice = createSlice({
             if (this_timer) {
                 this_timer.ifFinished = true
             }
+        },
+        saveCounter: (state, action) => {
+            const this_timer = state.timerList.find(timer=>timer.id === action.payload.id)
+            if (this_timer) {
+                this_timer.counter = action.payload.counter
+            }
         }
     }
 })

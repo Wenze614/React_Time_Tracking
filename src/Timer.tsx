@@ -3,7 +3,10 @@ import "./Timer.css"
 import {TimerObject}from './features/timer/timerSlice'
 import {useAppDispatch } from './app/hook'
 import {pauseTimer, resumeTimer, deleteTimer} from './features/timer/timerSlice'
-const Timer = (props:{todo: TimerObject}) =>{
+interface TimerProps {
+    todo: TimerObject
+}
+const Timer = (props:TimerProps) =>{
     const dispatch = useAppDispatch()
     const isPaused = props.todo.status
     const [counter, setCounter] = useState(0)

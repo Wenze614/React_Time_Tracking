@@ -2,7 +2,7 @@ import {useState, useEffect} from 'react'
 import "./Timer.css"
 import {TimerObject}from './features/timer/timerSlice'
 import {useAppDispatch } from './app/hook'
-import {pauseTimer, resumeTimer, deleteTimer, saveTimer} from './features/timer/timerSlice'
+import {pauseTimer, resumeTimer, deleteTimer, saveTimer, saveCounter} from './features/timer/timerSlice'
 interface TimerProps {
     todo: TimerObject
 }
@@ -31,7 +31,7 @@ const Timer = (props:TimerProps) =>{
         }
     }, [isPaused])
     return  (<div key = {props.todo.id} className = "task-item">
-                    <button className="save-button" onClick={()=>{dispatch(saveTimer(props.todo.id))}}>√</button>
+                    <button className="save-button" onClick={()=>{dispatch(saveTimer(props.todo.id));dispatch(saveCounter({id:props.todo.id,counter:counter}))}}>√</button>
                     <div className = "job-content">{props.todo.job}</div>
                     <div className = {!isPaused ? "timer-content":"timer-content paused"} >
                         <span className = "important-numbers">{Math.floor(counter/3600)}</span>h &nbsp;

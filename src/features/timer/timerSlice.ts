@@ -53,7 +53,7 @@ export const timerSlice = createSlice({
         }
     }
 })
-export const {addTimer, pauseTimer, resumeTimer, deleteTimer, saveTimer} = timerSlice.actions
+export const {addTimer, pauseTimer, resumeTimer, deleteTimer, saveTimer, saveCounter} = timerSlice.actions
 export const selectTimer = (state: RootState) => state.timer.timerList.filter(timer=>timer.ifFinished === false)
 export const selectSavedTimer = (state: RootState) => state.timer.timerList.filter(timer=>timer.ifFinished === true)
 export default timerSlice.reducer

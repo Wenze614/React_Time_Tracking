@@ -37,15 +37,9 @@ export const timerSlice = createSlice({
         },
         deleteTimer: (state, action) => {
             state.timerList = state.timerList.filter(timer=>timer.id !== action.payload)
-        },
-        addCounter: (state, action) => {
-            const this_timer = state.timerList.find(timer=>timer.id === action.payload)
-            if (this_timer) {
-                this_timer.counter += 1
-            }
         }
     }
 })
-export const {addTimer, pauseTimer, resumeTimer, deleteTimer, addCounter} = timerSlice.actions
+export const {addTimer, pauseTimer, resumeTimer, deleteTimer} = timerSlice.actions
 export const selectTimer = (state: RootState) => state.timer.timerList
 export default timerSlice.reducer

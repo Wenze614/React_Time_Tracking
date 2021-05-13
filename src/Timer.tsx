@@ -2,24 +2,31 @@ import {useState, useEffect} from 'react'
 import "./Timer.css"
 import {TimerObject}from './features/timer/timerSlice'
 import {useAppDispatch } from './app/hook'
-import {pauseTimer, resumeTimer, deleteTimer, addCounter} from './features/timer/timerSlice'
+import {pauseTimer, resumeTimer, deleteTimer} from './features/timer/timerSlice'
 const Timer = (props:{todo: TimerObject}) =>{
     const dispatch = useAppDispatch()
     const isPaused = props.todo.status
-    const this_ID = props.todo.id
-    const counter = props.todo.counter
-    const [id, setID] = useState<ReturnType<typeof setInterval>>()
-    // var id : ReturnType<typeof setInterval>
+    const [counter, setCounter] = useState(0)
+    // const [id, setID] = useState<ReturnType<typeof setInterval>>()
+    // // var id : ReturnType<typeof setInterval>
+    // useEffect(() => {
+    //     if (isPaused === false){
+    //         setID( setInterval(() => {
+    //             dispatch(addCounter(this_ID))
+    //         },1000))
+    //         return () => {clearInterval(id!)}
+    //     }
+    //     // eslint-disable-next-line react-hooks/exhaustive-deps
+    // },[isPaused])
+
     useEffect(() => {
         if (isPaused === false){
-            setID( setInterval(() => {
-                dispatch(addCounter(this_ID))
-            },1000))
-            return () => {clearInterval(id!)}
+            const id = setInterval(() => {
+                setCounter(counter => counter+1)
+            }, 1000)
+            return () => {clearInterval(id)}
         }
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    },[isPaused])
-
+    }, [isPaused])
     return  (<div key = {props.todo.id} className = "task-item">
                     <div className = "job-content">{props.todo.job}</div>
                     <div className = {!isPaused ? "timer-content":"timer-content paused"} >

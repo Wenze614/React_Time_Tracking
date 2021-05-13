@@ -4,5 +4,8 @@ interface RecordProps {
     todo : TimerObject
 }
 export const Record = (props:RecordProps) => {
-    return <p>{props.todo.job}</p>
+    return <div>
+            <p>{props.todo.job}</p>
+            <p>{props.todo.counter}</p>
+        </div>
 }

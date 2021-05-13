@@ -58,5 +58,28 @@
     
 }
 .delete-button:hover{
-    box-shadow: 5px 5px 30px red;
+    height: 120%;
+    width: 5%;
+    box-shadow: 5px 5px 10px black;
+}
+
+.save-button{
+    background-color: #65c0c7;
+    border-width: 0;
+    border-top-left-radius: 12px ;
+    border-bottom-left-radius: 12px;
+    color: white;
+    position: absolute;
+    left: 0;
+    margin-left: 0;
+    height: 100%;
+    width: 3%;
+    text-align: center;
+    
+}
+
+.save-button:hover{
+    height: 120%;
+    width: 5%;
+    box-shadow: 5px 5px 10px black;
 }

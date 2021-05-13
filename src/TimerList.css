@@ -1,0 +1,10 @@
+.timer-list{
+    background-color: white;
+    height: 100%;
+    width: 160px;
+    display: flex;
+    flex-direction: column;
+    z-index: -1;
+    top:0;
+    left:0;
+}

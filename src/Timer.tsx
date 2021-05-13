@@ -28,6 +28,7 @@ const Timer = (props:{todo: TimerObject}) =>{
         }
     }, [isPaused])
     return  (<div key = {props.todo.id} className = "task-item">
+                    <button className="save-button" onClick={()=>{dispatch(deleteTimer(props.todo.id))}}>√</button>
                     <div className = "job-content">{props.todo.job}</div>
                     <div className = {!isPaused ? "timer-content":"timer-content paused"} >
                         <span className = "important-numbers">{Math.floor(counter/3600)}</span>h &nbsp;

@@ -7,6 +7,7 @@ import {
 } from 'reactstrap';
 
 import TimerContainer from './TimerContainer';
+import TimerList from './TimerList'
 import { Provider } from 'react-redux';
 const AppWrapper = () => {
   return <Provider store = {store}>
@@ -21,7 +22,15 @@ const App = () => {
       <Navbar color="light" light expand="md">
         <NavbarBrand href="/">Simple Timer Application</NavbarBrand>
       </Navbar>
-      <TimerContainer/>
+      <div className="content">
+        <div className="record-container">
+          <TimerList/>
+        </div>
+        <div className="timer-container">
+          <TimerContainer/>
+        </div>
+      </div>
+      
     </div>
   );
 }

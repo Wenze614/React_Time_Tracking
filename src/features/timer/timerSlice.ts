@@ -38,6 +38,12 @@ export const timerSlice = createSlice({
         },
         deleteTimer: (state, action) => {
             state.timerList = state.timerList.filter(timer=>timer.id !== action.payload)
+        },
+        saveTimer: (state, action) =>{
+            const this_timer = state.timerList.find(timer=>timer.id === action.payload)
+            if (this_timer) {
+                this_timer.ifFinished = true
+            }
         }
     }
 })

@@ -6,6 +6,7 @@ export interface TimerObject {
     id: number;
     status: boolean;
     counter: number;
+    ifFinished: boolean;
 }
 
 interface timerState{

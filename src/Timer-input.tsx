@@ -31,7 +31,10 @@ const TimerInput = (props: TimerInputProps) => {
     }
     useEffect(()=>{
         if(text!=""){
-            setDisabled(false)
+            if(text.replace(/\s+/g,'')!="")
+            {
+                setDisabled(false)
+            }
         }
         else
         {

@@ -10,6 +10,7 @@ export interface TimerInputProps {
 const TimerInput = (props: TimerInputProps) => {
     const [index, setIndex] = useState(0)
     const [text, setText] = useState('')
+    const [valid, setValid] = useState(true)
     var  new_task: TimerObject={
         job: text,
         id: index,
@@ -27,7 +28,7 @@ const TimerInput = (props: TimerInputProps) => {
     return (
             <div className = "input-area">
             <input  className = "input-field" placeholder={props.placeholderText} value={text} onChange={(e) => setText(e.target.value)} />
-            <button  className = "start-button" onClick={() => onClick()}>Start</button>
+            <button  className = "start-button" onClick={() => onClick()} disabled={valid}>Start</button>
             </div>
         )
 };

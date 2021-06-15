@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { useState } from 'react';
 import {TimerObject}from './features/timer/timerSlice'
 import "./Timer-input.css"
@@ -10,7 +11,7 @@ export interface TimerInputProps {
 const TimerInput = (props: TimerInputProps) => {
     const [index, setIndex] = useState(0)
     const [text, setText] = useState('')
-    const [valid, setValid] = useState(true)
+    const [disabled, setDisabled] = useState(true)
     var  new_task: TimerObject={
         job: text,
         id: index,
@@ -24,11 +25,23 @@ const TimerInput = (props: TimerInputProps) => {
         var new_index = index + 1
         setIndex(new_index)
     }   
-
+    const onChange = (e:React.ChangeEvent<HTMLInputElement>) =>{
+        var value = e.target.value
+        setText(value)
+    }
+    useEffect(()=>{
+        if(text!=""){
+            setDisabled(false)
+        }
+        else
+        {
+            setDisabled(true)
+        }
+    },[text])
     return (
             <div className = "input-area">
-            <input  className = "input-field" placeholder={props.placeholderText} value={text} onChange={(e) => setText(e.target.value)} />
-            <button  className = "start-button" onClick={() => onClick()} disabled={valid}>Start</button>
+            <input  className = "input-field" placeholder={props.placeholderText} value={text} onChange={ onChange} />
+            <button  className = "start-button" onClick={() => onClick()} disabled={disabled}>Start</button>
             </div>
         )
 };
